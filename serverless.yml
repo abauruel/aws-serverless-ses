@@ -1,0 +1,29 @@
+service:
+  name: send-email-notification
+
+plugins:
+  - serverless-offline
+  - serverless-webpack
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - ses:*
+      Resource: "*"
+
+functions:
+  sendEmailNotification:
+    handler: src/functions/sendNotification.handler
+    events:
+      - http:
+          path: /sendNotification
+          method: POST
+          cors: true
