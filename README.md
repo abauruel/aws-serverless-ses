@@ -1,5 +1,5 @@
-# Serverless e-mail function 
-<p alignItem='center' >
+<h1 align='center'> Serverless e-mail function </h1>
+<p align='center' >
 <img src='https://pics.freeicons.io/uploads/icons/png/20728984181536298169-512.png' height='100px' width='100px' alt='aws-lambda'/>
 <img src='https://pics.freeicons.io/uploads/icons/png/10720372881536207296-512.png'
 height='100px' width='100px' alt='aws-ses'
