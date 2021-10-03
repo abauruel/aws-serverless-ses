@@ -16,7 +16,7 @@ export const handler = async (event: APIGatewayEvent) => {
 
   const params = {
     Destination: {
-      ToAddresses: [to]
+      ToAddresses: to
     },
     Message: {
       Body: {
@@ -28,7 +28,7 @@ export const handler = async (event: APIGatewayEvent) => {
   }
 
   try {
-    await ses.sendEmail(params).promise()
+    const response = await ses.sendEmail(params).promise()
     return {
       statusCode: 200,
       body: JSON.stringify({})
